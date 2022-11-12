@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const { StatusCodes } = require('http-status-codes');
 
 const register = async (req, res) => {
-  try {
     const { name, email, password } = req.body;
     const saltRounds = 10
 
@@ -17,10 +16,7 @@ const register = async (req, res) => {
     //token from moel
     const token = user.createJWT();
 
-    res.status(StatusCodes.CREATED).json({ name: user.name,password:user.password, token });
-  } catch (error) {
-    res.send(error);
-  }
+    res.status(StatusCodes.CREATED).json({ name: user.name,password:user.password, token })
 };
 const login = async (req, res) => {
   const { email, password } = req.body;
