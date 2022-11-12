@@ -8,7 +8,7 @@ const getJob = async (req,res) => {
     res.send('get single job')
 }
 const createJob = async (req,res) => {
-    res.send(req.body)
+    res.json(req.user)
 }
 const updateJob = async (req,res) => {
     res.send('Update job')
