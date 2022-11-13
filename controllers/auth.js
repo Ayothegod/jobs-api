@@ -31,7 +31,7 @@ const login = async (req, res) => {
   if(!deHash) return res.status(400).send('password does not match')
 
   const token = user.createJWT();
-  res.status(StatusCodes.OK).send({ user: { name: user.name }, token });
+  res.status(StatusCodes.OK).send({ user: { name: user.name },id: { id: user._id }, token });
 };
 
 module.exports = { register, login };
