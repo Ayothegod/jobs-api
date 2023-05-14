@@ -1,6 +1,7 @@
-const { application } = require('express')
 const express = require('express')
 const router = express.Router()
+
+const { application } = require('express')
 const {getAllJobs, getJob, createJob, deleteJob, updateJob} = require('../controllers/jobs.js')
 
 router.get('/',getAllJobs)
